@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Залікова робота 1</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Заголовок (header) -->
+        <header>
+            <h1>Ваша сторінка</h1>
+        </header>
+
+        <!-- Навігаційне меню (navbar) -->
+        <div class="navbar">
+            <div class="logo">
+                <img src="../static/img/logo.jpg">
+            </div>
+            <a href="#">Головна</a>
+            <a href="#">Про нас</a>
+            <a href="#">Контакти</a>
+            <a href="#">Послуги</a>
+        </div>
+
+        <section class="flex-container">
+            <div class="flex-item">
+                <h1>Виконати SQL-запит</h1>
+                <form method="POST" action="/execute_sql">
+                    <textarea name="sql_query" rows="4" cols="50" placeholder="Введіть SQL-запит"></textarea><br>
+                    <input type="submit" value="Виконати запит">
+                </form>
+                <h2>Результати</h2>
+                <div class="width-limit">
+                    {{ result }}
+                </div>
+            </div>
+            <div class="flex-item">
+                <h1>Побудувати стовпчикову діаграму за місяць</h1>
+                <form method="POST" action="/chart">
+                    <label for="equipment_id">Виберіть техніку:</label>
+                    <select name="equipment_id" id="equipment_id">
+                        {% for option in equipment_options %}
+                        <option value="{{ option[0] }}">{{ option[1] }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Побудувати діаграму">
+                </form>
+                <img src="../static/img/chart.png" alt="Графік" width="600">
+            </div>
+            <div class="flex-item">
+                <h1>Додати витрати на пальне</h1>
+                <form action="/add_fuel_expense" method="POST">
+                    <label for="equipment_id">Оберіть техніку:</label>
+                    <select id="equipment_id" name="equipment_id">
+                        {% for option in equipment_options %}
+                        <option value="{{ option[0] }}">{{ option[1] }}</option>
+                        {% endfor %}
+                    </select><br>
+        
+                    <label for="date">Дата:</label>
+                    <input type="date" id="date" name="date"><br>
+        
+                    <label for="liters">Літри:</label>
+                    <input type="text" id="liters" name="liters"><br>
+        
+                    <label for="cost">Вартість:</label>
+                    <input type="text" id="cost" name="cost"><br>
+        
+                    <label for="mileage">Пробіг:</label>
+                    <input type="text" id="mileage" name="mileage"><br>
+        
+                    <input type="submit" value="Додати">
+                </form>
+            </div>
+        </section>
+        <footer>
+            &copy; 2023 НУОУ, ІКТ та КО, кафедра інформаційно-аналітичних технологій
+        </footer>
+    </div>
+</body>
+
+</html>

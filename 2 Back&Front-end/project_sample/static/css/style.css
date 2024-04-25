@@ -1,0 +1,166 @@
+/* Стиль для body */
+body {
+    background-color: #4d4834;
+    color: #f39200;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стилі для логотипу */
+.logo img {
+    width: 100px;
+    /* Розмір логотипу */
+    height: 100px;
+    padding: 10px;
+}
+
+/* Стиль для заголовку h1 */
+h1 {
+    color: #f39200;
+}
+
+/* Стиль для форми та випадаючого списку */
+form {
+    margin: 20px;
+    padding: 20px;
+    background-color: #293757;
+    border-radius: 10px;
+}
+
+/* Стиль для мітки та вибіркового списку */
+label {
+    color: #f39200;
+    font-weight: bold;
+}
+
+select {
+    padding: 5px;
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    background-color: #4d4834;
+    color: #f39200;
+}
+
+/* Стиль для кнопки "Показати графік" */
+input[type="submit"] {
+    background-color: #f39200;
+    color: #4d4834;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Стиль для footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #f39200;
+}
+
+/* Стиль для інших елементів, якщо потрібно */
+header {
+    background-color: #293757;
+    color: #f39200;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* Розмістити елементи вправо і вліво */
+    align-items: center;
+    /* Вирівняти елементи по вертикалі */
+
+}
+
+/* Стилі для тексту заголовка (header) */
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Стилі для навігаційного меню (navbar) */
+.navbar {
+    background-color: #293757;
+    color: #f39200;
+    text-align: center;
+    padding: 10px 0;
+    display: flex; /* Розміщення всіх елементів в рядок */
+    align-items: center; /* Вирівняти елементи по вертикалі */
+    
+}
+
+/* Стилі для посилань у навігаційному меню (navbar) */
+.navbar a {
+    color: #f39200;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* Стилі для посилань у навігаційному меню при наведенні курсору (hover) */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Стилі для футера (footer) */
+footer {
+    background-color: #293757;
+    color: #f39200;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Стилі для контейнера Flexbox */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Мінімальна висота контейнера на весь екран */
+}
+
+/* Стилі для контейнера Flexbox */
+.flex-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    /* Дозволяє рядкам переноситися на наступний рівень */
+    justify-content:center ;
+    /* Розміщення елементів у рядку */    
+    
+}
+
+/* Стилі для елементів (div) першого рівня */
+.flex-item {
+    flex: 30%;
+    /* 33.33% ширина елемента з відступами */
+    margin-bottom: 10px;
+    /* Внутрішні відступи між елементами */
+    background-color: #fff;
+    color: #4d4834;
+    padding: 10px;
+    box-sizing: border-box;
+    
+    /* Враховує внутрішні відступи в розрахунку ширини */
+}
+
+.width-limit {
+    max-width: 250 px;
+}
+
+/* Медіа-запит для адаптації до екранів меншого розміру (наприклад, мобільних пристроїв) */
+@media  (max-width: 768px) {
+    .flex-item {
+        flex:45%;
+        /* 50% ширина елемента з відступами на менших екранах */
+    }
+}
+
+@media  (max-width: 480px) {
+    .flex-item {
+        flex: 100%;
+        /* 100% ширина елемента на дуже малих екранах */
+    }
+}
